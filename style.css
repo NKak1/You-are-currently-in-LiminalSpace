@@ -77,31 +77,35 @@ body {
   100% { transform: translate(0); }
 }
 
-/* ===== PC（デフォルト） ===== */
+/* ===== 背景画像 ===== */
 .hero {
   width: 100%;
-  height: 100vh; /* 画面いっぱい */
-  overflow: hidden;
-  background: #000;
+  height: 100vh;
+
+  background-image: url("Liminal.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 画面にフィット（トリミングあり） */
+/* ===== ロゴ（透過画像） ===== */
+.hero-logo {
+  width: 600px; /* PCサイズ */
+  max-width: 90%;
 }
 
-/* ===== スマホ ===== */
 @media (max-width: 768px) {
 
   .hero {
-    height: auto; /* 高さ固定を解除 */
+    height: 100vh; /* 背景はそのまま全画面 */
   }
 
-  .hero-img {
-    width: 100%;
-    height: auto; /* ←これが重要 */
-    object-fit: contain; /* 全体表示 */
+  .hero-logo {
+    width: 90%; /* 横幅に合わせる */
   }
 
 }
