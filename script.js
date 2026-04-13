@@ -38,7 +38,7 @@ window.addEventListener("load", () => {
       setTimeout(typeEffect, 120);
 
     } else {
-      // 最後は正常化
+      // 正常化
       noise.classList.add("noise-active");
 
       setTimeout(() => {
@@ -48,7 +48,7 @@ window.addEventListener("load", () => {
     }
   }
 
-  // タイピング開始
+  // タイピング
   typeEffect();
 
   // ローディング終了
