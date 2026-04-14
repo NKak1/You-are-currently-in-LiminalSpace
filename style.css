@@ -175,6 +175,7 @@ body {
 /* スマホ対応 */
 @media (max-width: 768px) {
   .gallery {
+    display: flex;
     gap: 40px;
     padding: 60px 20px;
   }
