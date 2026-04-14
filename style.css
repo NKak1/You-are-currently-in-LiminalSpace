@@ -109,3 +109,89 @@ body {
   }
 
 }
+body {
+  margin: 0;
+  background: #555;
+  font-family: 'Share Tech Mono', monospace;
+  overflow-x: hidden;
+}
+
+/* 横スクロール */
+.gallery {
+  display: flex;
+  gap: 80px;
+  padding: 100px 60px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* スクロールバー消す（任意） */
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  width: 220px;
+  text-align: center;
+  text-decoration: none;
+  color: #ddd;
+  flex-shrink: 0;
+}
+
+/* 縦長画像 */
+.card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  filter: brightness(0.6) blur(1px);
+  transition: 0.4s;
+}
+
+/* タイトル */
+.card p {
+  margin-top: 15px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  transition: 0.4s;
+
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ホバー演出（不思議感） */
+.card:hover img {
+  transform: scale(1.08);
+  filter: brightness(1) blur(0);
+}
+
+.card:hover p {
+  opacity: 1;
+  letter-spacing: 4px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .gallery {
+    gap: 40px;
+    padding: 60px 20px;
+  }
+
+  .card img {
+    width: 150px;
+    height: 260px;
+  }
+}
+
+.hero,
+.concept,
+.gallery {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.show {
+  opacity: 1;
+}

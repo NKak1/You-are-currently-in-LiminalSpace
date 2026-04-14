@@ -58,8 +58,61 @@ window.addEventListener("load", () => {
 
     setTimeout(() => {
       loading.style.display = "none";
+
+      document.querySelector('.hero').classList.add('show');
+    document.querySelector('.concept').classList.add('show');
+    document.querySelector('.gallery').classList.add('show');
+
     }, 2000);
 
   }, 3500);
+
+  const gallery = document.querySelector('.gallery');
+
+  console.log(gallery.children.length);
+  
+gallery.innerHTML += gallery.innerHTML;
+
+setTimeout(() => {
+gallery.scrollLeft = gallery.scrollWidth / 2;
+},0);
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+gallery.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - gallery.offsetLeft;
+  scrollLeft = gallery.scrollLeft;
+});
+
+gallery.addEventListener('mouseleave', () => {
+  isDown = false;
+});
+
+gallery.addEventListener('mouseup', () => {
+  isDown = false;
+});
+
+gallery.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - gallery.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  gallery.scrollLeft = scrollLeft - walk;
+});
+
+gallery.addEventListener('scroll', () => {
+  const half = gallery.scrollWidth / 2;
+
+  if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth - 10) {
+    gallery.scrollLeft -= half;
+  }
+
+  if (gallery.scrollLeft <= 0) {
+    gallery.scrollLeft += half;
+  }
+});
 
 });
