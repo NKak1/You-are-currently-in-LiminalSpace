@@ -115,4 +115,22 @@ gallery.addEventListener('scroll', () => {
   }
 });
 
+// タッチ対応
+gallery.addEventListener('touchstart', (e) => {
+  isDown = true;
+  startX = e.touches[0].pageX - gallery.offsetLeft;
+  scrollLeft = gallery.scrollLeft;
+});
+
+gallery.addEventListener('touchend', () => {
+  isDown = false;
+});
+
+gallery.addEventListener('touchmove', (e) => {
+  if (!isDown) return;
+  const x = e.touches[0].pageX - gallery.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  gallery.scrollLeft = scrollLeft - walk;
+});
+
 });
