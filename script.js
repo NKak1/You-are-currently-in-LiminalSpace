@@ -67,70 +67,61 @@ window.addEventListener("load", () => {
 
   }, 3500);
 
-  const gallery = document.querySelector('.gallery');
+const gallery = document.querySelector(".gallery");
 
-  console.log(gallery.children.length);
-  
-gallery.innerHTML += gallery.innerHTML;
+if (!gallery.classList.contains("cloned")) {
+  gallery.innerHTML += gallery.innerHTML;
+  gallery.classList.add("cloned");
+}
 
-setTimeout(() => {
-gallery.scrollLeft = gallery.scrollWidth / 2;
-},0);
+const originalWidth = gallery.scrollWidth / 2;
 
-let isDown = false;
-let startX;
-let scrollLeft;
+gallery.addEventListener("scroll", () => {
 
-gallery.addEventListener('mousedown', (e) => {
-  isDown = true;
-  startX = e.pageX - gallery.offsetLeft;
-  scrollLeft = gallery.scrollLeft;
-});
-
-gallery.addEventListener('mouseleave', () => {
-  isDown = false;
-});
-
-gallery.addEventListener('mouseup', () => {
-  isDown = false;
-});
-
-gallery.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - gallery.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  gallery.scrollLeft = scrollLeft - walk;
-});
-
-gallery.addEventListener('scroll', () => {
-  const half = gallery.scrollWidth / 2;
-
-  if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth - 10) {
-    gallery.scrollLeft -= half;
+  if (gallery.scrollLeft >= originalWidth - 10) {
+    gallery.scrollLeft -= originalWidth;
   }
 
-  if (gallery.scrollLeft <= 0) {
-    gallery.scrollLeft += half;
+  if (gallery.scrollLeft <= 10) {
+    gallery.scrollLeft += originalWidth;
   }
+
 });
 
-// タッチ対応
-gallery.addEventListener('touchstart', (e) => {
-  isDown = true;
-  startX = e.touches[0].pageX - gallery.offsetLeft;
-  scrollLeft = gallery.scrollLeft;
-});
+let scrollSpeed = 0.5;
+let isInteracting = false;
 
-gallery.addEventListener('touchend', () => {
-  isDown = false;
-});
+// マウス操作
+gallery.addEventListener("mousedown", () => isInteracting = true);
+gallery.addEventListener("mouseup", () => isInteracting = false);
+gallery.addEventListener("mouseleave", () => isInteracting = false);
 
-gallery.addEventListener('touchmove', (e) => {
-  if (!isDown) return;
-  const x = e.touches[0].pageX - gallery.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  gallery.scrollLeft = scrollLeft - walk;
+// スマホ操作
+gallery.addEventListener("touchstart", () => isInteracting = true);
+gallery.addEventListener("touchend", () => isInteracting = false);
+
+// 複製
+if (!gallery.classList.contains("cloned")) {
+  gallery.innerHTML += gallery.innerHTML;
+  gallery.classList.add("cloned");
+}
+
+let timeout;
+
+gallery.addEventListener("scroll", () => {
+  clearTimeout(timeout);
+
+  timeout = setTimeout(() => {
+
+    if (gallery.scrollLeft >= originalWidth) {
+      gallery.scrollLeft -= originalWidth;
+    }
+
+    if (gallery.scrollLeft <= 0) {
+      gallery.scrollLeft += originalWidth;
+    }
+
+  }, 100); 
 });
 
 });
