@@ -13,21 +13,15 @@ window.addEventListener("load", () => {
 
       if (Math.random() < 0.3) {
 
-        // ノイズON
         noise.classList.add("noise-active");
-
-        // 画面歪み
         target.classList.add("glitch");
 
-        // バグ文字
         target.textContent += glitchChars[Math.floor(Math.random() * glitchChars.length)];
 
         setTimeout(() => {
           target.textContent = target.textContent.slice(0, -1) + text[index];
-
           noise.classList.remove("noise-active");
           target.classList.remove("glitch");
-
         }, 80);
 
       } else {
@@ -38,7 +32,7 @@ window.addEventListener("load", () => {
       setTimeout(typeEffect, 120);
 
     } else {
-      // 正常化
+
       noise.classList.add("noise-active");
 
       setTimeout(() => {
@@ -48,7 +42,7 @@ window.addEventListener("load", () => {
     }
   }
 
-  // タイピング
+  // タイピング開始
   typeEffect();
 
   // ローディング終了
@@ -60,68 +54,41 @@ window.addEventListener("load", () => {
       loading.style.display = "none";
 
       document.querySelector('.hero').classList.add('show');
-    document.querySelector('.concept').classList.add('show');
-    document.querySelector('.gallery').classList.add('show');
+      document.querySelector('.concept').classList.add('show');
+      document.querySelector('.gallery').classList.add('show');
 
     }, 2000);
 
   }, 3500);
 
-const gallery = document.querySelector(".gallery");
+  const gallery = document.querySelector(".gallery");
 
-if (!gallery.classList.contains("cloned")) {
-  gallery.innerHTML += gallery.innerHTML;
-  gallery.classList.add("cloned");
-}
-
-const originalWidth = gallery.scrollWidth / 2;
-
-gallery.addEventListener("scroll", () => {
-
-  if (gallery.scrollLeft >= originalWidth - 10) {
-    gallery.scrollLeft -= originalWidth;
+  // 複製
+  if (!gallery.classList.contains("cloned")) {
+    gallery.innerHTML += gallery.innerHTML;
+    gallery.classList.add("cloned");
   }
 
-  if (gallery.scrollLeft <= 10) {
-    gallery.scrollLeft += originalWidth;
-  }
+  const originalWidth = gallery.scrollWidth / 2;
 
-});
+  let timeout;
 
-let scrollSpeed = 0.5;
-let isInteracting = false;
+  gallery.addEventListener("scroll", () => {
+    clearTimeout(timeout);
 
-// マウス操作
-gallery.addEventListener("mousedown", () => isInteracting = true);
-gallery.addEventListener("mouseup", () => isInteracting = false);
-gallery.addEventListener("mouseleave", () => isInteracting = false);
+    timeout = setTimeout(() => {
 
-// スマホ操作
-gallery.addEventListener("touchstart", () => isInteracting = true);
-gallery.addEventListener("touchend", () => isInteracting = false);
+      // 右端
+      if (gallery.scrollLeft >= originalWidth) {
+        gallery.scrollLeft -= originalWidth;
+      }
 
-// 複製
-if (!gallery.classList.contains("cloned")) {
-  gallery.innerHTML += gallery.innerHTML;
-  gallery.classList.add("cloned");
-}
+      // 左端
+      if (gallery.scrollLeft <= 0) {
+        gallery.scrollLeft += originalWidth;
+      }
 
-let timeout;
-
-gallery.addEventListener("scroll", () => {
-  clearTimeout(timeout);
-
-  timeout = setTimeout(() => {
-
-    if (gallery.scrollLeft >= originalWidth) {
-      gallery.scrollLeft -= originalWidth;
-    }
-
-    if (gallery.scrollLeft <= 0) {
-      gallery.scrollLeft += originalWidth;
-    }
-
-  }, 180); 
-});
+    }, 180); 
+  });
 
 });
