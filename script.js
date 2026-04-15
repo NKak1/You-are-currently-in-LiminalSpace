@@ -63,32 +63,29 @@ window.addEventListener("load", () => {
 
   const gallery = document.querySelector(".gallery");
 
-  // 複製
-  if (!gallery.classList.contains("cloned")) {
-    gallery.innerHTML += gallery.innerHTML;
-    gallery.classList.add("cloned");
-  }
+// 複製
+if (!gallery.classList.contains("looped")) {
+  gallery.innerHTML += gallery.innerHTML;
+  gallery.classList.add("looped");
+}
 
-  const originalWidth = gallery.scrollWidth / 2;
+const originalWidth = gallery.scrollWidth / 2;
+let timeout;
 
-  let timeout;
+gallery.addEventListener("scroll", () => {
+  clearTimeout(timeout);
 
-  gallery.addEventListener("scroll", () => {
-    clearTimeout(timeout);
+  timeout = setTimeout(() => {
 
-    timeout = setTimeout(() => {
+    if (gallery.scrollLeft >= originalWidth) {
+      gallery.scrollLeft -= originalWidth;
+    }
 
-      // 右端
-      if (gallery.scrollLeft >= originalWidth) {
-        gallery.scrollLeft -= originalWidth;
-      }
+    if (gallery.scrollLeft <= 0) {
+      gallery.scrollLeft += originalWidth;
+    }
 
-      // 左端
-      if (gallery.scrollLeft <= 0) {
-        gallery.scrollLeft += originalWidth;
-      }
-
-    }, 180); 
-  });
+  }, 120); 
+});
 
 });
