@@ -11,6 +11,43 @@
  </head>
 
  <body>
+
+  <div class="menu-btn" id="menu-btn">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav class="menu" id="menu">
+  <ul>
+    <li><a href="#level2">Liminal Space</a></li>
+    <li><a href="#level3">The Backrooms</a></li>
+    <li><a href="#about">Choose Rooms</a></li>
+    <ul class="sub-menu">
+      <li><a href="page1.html">The Lobby</a></li>
+      <li><a href="page2.html">The Habitable Zone</a></li>
+      <li><a href="page3.html">Pipe Dreams</a></li>
+      <li><a href="page4.html">The Electrical Station</a></li>
+      <li><a href="page5.html">The Abandoned Office</a></li>
+      <li><a href="page6.html">The Hotel</a></li>
+      <li><a href="page7.html">Lights Out</a></li>
+      <li><a href="page8.html">Thalassophobia</a></li>
+      <li><a href="page9.html">The Cave System</a></li>
+      <li><a href="page10.html">The Darkened Suburbs</a></li>
+      <li><a href="page11.html">The Field of Wheat</a></li>
+    </ul>
+  </ul>
+</nav>
+<script>
+const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("menu");
+
+btn.addEventListener("click", () => {
+  btn.classList.toggle("active");
+  menu.classList.toggle("active");
+});
+</script>
+
        <div id="loading">
          <div id="noise"></div>
 
@@ -27,47 +64,87 @@
   <div class="overlay"></div>
 
   <div class="wrapper">
-    <h1 class="title glitch" data-text="Escape the Backrooms">
-      Escape the Backrooms
+
+    <h2 id="level2"></h2>
+    <h1 class="title glitch" data-text="Liminal Space">
+      Liminal Space
     </h1>
 
     <div class="text-block">
 
       <p class="fade">
-        Fancy Games氏が開発した<br>
-        1〜4人のマルチプレイ対応、協力型探索ホラーゲーム<br>
-        <p>
-        このゲームに登場するステージが<br>
-        「The Backrooms」というリミナルスペースの最も有名な例である。<br>
-        「The Backrooms」は2014年、当時匿名の人物が<br>
-        4chanのスレッドに投稿した画像をきっかけに流行した<br>
-        インターネット都市伝説・ホラー創作のことを指す。<br>
-        主にリミナルスペース×エンティティ（怪異）で構成されているため<br>
-        リミナルスペースのサブジャンルとしても知られている。<br>
-      </p>
-      <p class="fade highlight">
-        あなたが注意を怠って、おかしな所で現実から外れ落ちると、<br>
-        古くて湿ったカーペットの匂いと、単調な黄色の狂気と、<br>
-        最大限にハム音を発する蛍光灯による永遠に続く背景雑音と、<br>
-        約十五兆 m2 を超えて広がるランダムに区分けされた<br>
-        空っぽな部屋部屋へやべやに閉じ込められるだけの、<br>
-        ”The Backrooms” へ行き着くことになるのです。<br>
-        もし、近くで何かがうろうろしているのが聞こえたら、<br>
-        それはきっとあなたが出す音に気付いていることでしょう。<br>
-        <span class="danger">あなたに神の救いがあらんことを。</span><br>
+        " Liminal "（リミナル）はラテン語の " Limen "に由来する。<br>
+        二つの状態の中間を意味し、どっちつかずの時間の中で<br>
+        自分が何者なのか、どこにいるのかはっきりわからなくなることから<br>
+        「Liminal Space」（リミナルスペース）の概念が拡張した。
       </p>
       <p class="fade">
-        今回はリミナルスペースを少しでも体験できる要素として<br>
-        「Escape the Backrooms」に登場する<br>
-        無印通常階層の一部を紹介しています。
+        リミナルスペースは日常の至る所に存在している。<br>
+        乗客のいない地下鉄、人気のない通り、がらんとした駐車場。<br>
+        普段人が行き交い、賑わう場所から人の存在を取り除いた瞬間、<br>
+        それら全てがリミナルスペースである。
+      </p>
+    </div>
+
+    <h2 id="level3"></h2>
+    <h1 class="title glitch" data-text="The Backrooms">
+      The Backrooms
+    </h1>
+
+    <div class="text-block">
+
+      <p class="fade">
+       " 一見無害なリミナルスペースを見て<br>
+        どのようなストーリーを作り出すことができるのか "<br>
+        <p>
+        このような問いから生まれたのが<br>
+        「The Backrooms」（バックルーム）だ。<br>
+        </p>
+        <p>
+        匿名掲示板4chanに貼られた一枚の画像から<br>
+        概念が生まれ、これをコンセプトとして構築された世界が<br>
+        現在、バックルームとして広く知られているコンテンツである。<br>
+        <a href="http://japan-backrooms-wiki.wikidot.com">The Backrooms JP</a>← Click!<br>
+        </p>
+      </p>
+      <p class="fade highlight">
+        うっかりして、間違った場所からノークリップ[壁抜け]<br>
+        してしまうと、バックルームに迷い込むことになる。<br>
+        古い湿ったカーペットの悪臭、<br>
+        狂気じみた一面の黄色、<br>
+        蛍光灯が唸り続ける終わりのない背景音だけの、<br>
+        6億平方マイルに及ぶ無作為に区切られた無人空間に<br>
+        あなたは閉じ込められてしまったのだ。<br>
+        もし近くで何かがうろついている音を聞いてしまったら、<br>
+        神に祈るしかない。そいつは間違いなく、<br>
+        <span class="danger">あなたの存在に気づいているのだから。</span><br>
+      </p>
+      <p class="fade">
+        0から999のレベルがあり、各階層に設定と画像が存在する。<br>
+        その各階層のイメージ画像に「リミナルスペース」が選ばれたことで<br>
+        リミナルスペースは単なる美学的現象だけでなく<br>
+        恐怖の要素も纏うようになったといえるだろう。
+      </p>
+      <p>
+        このようにして構築された世界「The Backrooms」を<br>
+        モチーフとして取り入れた作品は数多ある。
+      </p>
+      <p>
+        今回はその中の一つであり、私の好きなゲームでもある<br>
+        「Escape the Backrooms」に登場する階層の一部を紹介し、<br>
+        「The Backrooms」の世界を体験してもらいたいと思う。
       </p>
       <p class="fade last cinematic">
         現実の枠から外れた奇妙な異世界<br>「The Backrooms」へようこそ
+      </p>
+      <p>
+       ◀︎   Choose level !   ▶︎
       </p>
 
     </div>
   </div>
 </section>
+<h2 id="about"></h2>
 
        <section>
         <div class="gallery">

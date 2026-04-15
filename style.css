@@ -449,3 +449,107 @@ body.page11 {
   font-family: 'Share Tech Mono', monospace;
   letter-spacing: 0.08em;
 }
+
+/* 三本線ボタン */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.menu-btn span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+
+/* 開いたときバツになる */
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* メニュー本体 */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100vh;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(5px);
+  transition: 0.4s;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 開いた状態 */
+.menu.active {
+  right: 0;
+}
+
+/* メニューリスト */
+.menu ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.menu li {
+  margin: 20px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 20px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+/* ホバーで不気味に */
+.menu a:hover {
+  color: #ffdb3b;
+  text-shadow: 0 0 8px rgb(255, 247, 0);
+}
+
+/* サブメニュー */
+.sub-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.sub-menu li {
+  margin: 8px 0;
+}
+
+/* 小リンク */
+.sub-menu a {
+  font-size: 14px;
+  color: #aaa;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+/* ホバーでじわっと */
+.sub-menu a:hover {
+  color: #ffdb3b;
+  text-shadow: 0 0 6px rgb;
+}
