@@ -121,7 +121,7 @@ gallery.addEventListener("scroll", () => {
       gallery.scrollLeft += originalWidth;
     }
 
-  }, 100); 
+  }, 180); 
 });
 
 });

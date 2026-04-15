@@ -199,3 +199,11 @@ body {
 .show {
   opacity: 1;
 }
+
+.gallery {
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  scroll-snap-align: start;
+}
