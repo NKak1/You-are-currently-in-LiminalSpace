@@ -115,6 +115,193 @@ body {
   font-family: 'Share Tech Mono', monospace;
 }
 
+body {
+  margin: 0;
+  background: #444444;
+  color: #eaeaea;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* セクション */
+.concept {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ノイズ */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.08;
+}
+
+/* 中身 */
+.wrapper {
+  position: relative;
+  max-width: 800px;
+  padding: 40px;
+}
+
+.title {
+  font-size: 48px;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255,255,255,0.15);
+}
+
+/* 上品グリッチ */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+/* 薄いズレ */
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+/* 白ベースのズレだけ */
+.glitch::before {
+  color: #ffffff;
+  transform: translate(1px, -1px);
+}
+
+.glitch::after {
+  color: #ffffff;
+  transform: translate(-1px, 1px);
+}
+
+/* “たまに発動する”グリッチ */
+@keyframes subtleGlitch {
+  0%, 90%, 100% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 0.3;
+  }
+  94% {
+    opacity: 0;
+  }
+  96% {
+    opacity: 0.25;
+  }
+}
+
+.glitch::before {
+  animation: subtleGlitch 5s infinite;
+}
+
+.glitch::after {
+  animation: subtleGlitch 5s infinite reverse;
+}
+
+/* テキスト */
+.text-block p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 1.5em;
+  line-height: 1.9;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', 'Share Tech Mono', monospace;
+}
+
+.highlight {
+  background: rgba(204, 201, 201, 0.25); /* 半透明グレー */
+  padding: 20px 25px;
+  border-radius: 8px;
+
+  /* 少しだけ小さく見せる */
+  transform: scale(0.96);
+
+  /* 中央寄せ＋幅制限 */
+  max-width: 90%;
+  margin: 40px auto;
+
+  /* ほんのり浮かせる */
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+
+  /* ガラスっぽくするなら */
+  backdrop-filter: blur(4px);
+}
+
+/* フェード */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s forwards;
+}
+
+/* 順番表示 */
+.fade:nth-of-type(1) { animation-delay: 0.5s; }
+.fade:nth-of-type(2) { animation-delay: 2s; }
+.fade:nth-of-type(3) { animation-delay: 4s; }
+.fade:nth-of-type(4) { animation-delay: 6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 強調 */
+.danger {
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.25);
+  animation: softFlash 4s ease-in-out infinite;
+}
+
+/* 最後の一文ちょい演出 */
+.last {
+  margin-top: 40px;
+  letter-spacing: 3px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.cinematic {
+  text-align: center;
+  margin-top: 80px;
+
+  font-size: 20px;
+  letter-spacing: 6px; /* ←これが重要 */
+
+  opacity: 0;
+  animation: cinematicFade 2.5s forwards;
+  animation-delay: 6.5s;
+
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255,255,255,0.2);
+}
+
+/* ゆっくり出てくる */
+@keyframes cinematicFade {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    letter-spacing: 10px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 6px;
+  }
+}
+
 /* 横スクロール */
 .gallery {
   display: flex;
@@ -124,7 +311,7 @@ body {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
-  scroll-snap-type: x mandatory; 
+  scroll-snap-type: none; 
 }
 
 /* スクロールバー消す（任意） */
@@ -206,4 +393,59 @@ body {
 
 .card {
   scroll-snap-align: start;
+}
+
+body.page1 {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+body.page2 {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+body.page3 {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+body.page4 {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+body.page5 {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+body.page6 {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+body.page7 {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+body.page8 {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+body.page9 {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+body.page10 {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+body.page11 {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
 }
