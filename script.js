@@ -10,16 +10,13 @@ window.addEventListener("load", () => {
     const glitchChars = "!@#$%^&*()_+-=<>?/[]{}";
     let index = 0;
 
-    // ===== 初回判定（タブごと）=====
     const isFirstVisit = !sessionStorage.getItem("visited");
 
     if (isFirstVisit) {
       sessionStorage.setItem("visited", "true");
 
-      // アラート
       window.alert('Welcome to LiminalSpace !');
 
-      // ===== タイピング =====
       function typeEffect() {
         if (!target) return;
 
@@ -58,7 +55,6 @@ window.addEventListener("load", () => {
 
       typeEffect();
 
-      // ===== ローディング終了 =====
       setTimeout(() => {
         if (loading) {
           loading.style.opacity = "0";
@@ -78,7 +74,6 @@ window.addEventListener("load", () => {
       showContent();
     }
 
-    // ===== 表示処理 =====
     function showContent() {
       const hero = document.querySelector('.hero');
       const concept = document.querySelector('.concept');
@@ -89,7 +84,6 @@ window.addEventListener("load", () => {
       if (gallery) gallery.classList.add('show');
     }
 
-    // ===== 横スクロール =====
     const gallery = document.querySelector(".gallery");
 
     if (gallery && !gallery.classList.contains("looped")) {
@@ -118,7 +112,47 @@ window.addEventListener("load", () => {
     }
 
   } catch (e) {
-    console.error("エラー出てる👇", e);
+    console.error("エラー", e);
   }
 
+});
+
+const thumbs =
+document.querySelectorAll(".memory-thumb");
+
+const mainImage =
+document.getElementById("memory-image");
+
+const title =
+document.getElementById("memory-name");
+
+const text =
+document.getElementById("memory-text");
+
+thumbs.forEach(thumb => {
+
+    thumb.addEventListener("click", () => {
+
+        mainImage.style.opacity = 0;
+
+        setTimeout(() => {
+
+            mainImage.src = thumb.src;
+
+            title.textContent =
+            thumb.dataset.title;
+
+            text.textContent =
+            thumb.dataset.text;
+
+            mainImage.style.opacity = 1;
+
+        }, 200);
+
+        thumbs.forEach(t => {
+            t.classList.remove("active");
+        });
+
+        thumb.classList.add("active");
+    });
 });

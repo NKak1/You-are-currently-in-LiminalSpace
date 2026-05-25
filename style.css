@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/* 全体 */
 body {
   margin: 0;
   font-family: 'Share Tech Mono', monospace;
@@ -8,7 +7,6 @@ body {
   color: #222;
 }
 
-/* ローディング画面 */
 #loading {
   position: fixed;
   top: 0;
@@ -23,7 +21,6 @@ body {
   overflow: hidden;
 }
 
-/* ノイズ */
 #noise {
   position: fixed;
   width: 100%;
@@ -44,7 +41,6 @@ body {
   opacity: 1;
 }
 
-/* テキスト */
 .loader {
   text-align: center;
 }
@@ -57,13 +53,11 @@ body {
   animation: zoom 3s infinite alternate;
 }
 
-/* 拡大 */
 @keyframes zoom {
   0% { transform: scale(1); opacity: 0.6; }
   100% { transform: scale(1.4); opacity: 1; }
 }
 
-/* 歪み */
 .glitch {
   animation: glitch 0.2s;
 }
@@ -77,7 +71,6 @@ body {
   100% { transform: translate(0); }
 }
 
-/* 背景画像 */
 .hero {
   width: 100%;
   height: 100vh;
@@ -92,7 +85,6 @@ body {
   align-items: center;
 }
 
-/* ロゴ（透過画像） */
 .hero-logo {
   width: 600px; 
   max-width: 90%;
@@ -122,7 +114,6 @@ body {
   font-family: 'Share Tech Mono', monospace;
 }
 
-/* セクション */
 .concept {
   position: relative;
   min-height: 100vh;
@@ -132,7 +123,6 @@ body {
   overflow: hidden;
 }
 
-/* ノイズ */
 .overlay {
   position: absolute;
   width: 100%;
@@ -141,7 +131,6 @@ body {
   opacity: 0.08;
 }
 
-/* 中身 */
 .wrapper {
   position: relative;
   max-width: 800px;
@@ -156,13 +145,11 @@ body {
   text-shadow: 0 0 8px rgba(255,255,255,0.15);
 }
 
-/* 上品グリッチ */
 .glitch {
   position: relative;
   display: inline-block;
 }
 
-/* 薄いズレ */
 .glitch::before,
 .glitch::after {
   content: attr(data-text);
@@ -172,7 +159,6 @@ body {
   opacity: 0;
 }
 
-/* 白ベースのズレだけ */
 .glitch::before {
   color: #ffffff;
   transform: translate(1px, -1px);
@@ -183,7 +169,6 @@ body {
   transform: translate(-1px, 1px);
 }
 
-/* “たまに発動する”グリッチ */
 @keyframes subtleGlitch {
   0%, 90%, 100% {
     opacity: 0;
@@ -207,7 +192,6 @@ body {
   animation: subtleGlitch 5s infinite reverse;
 }
 
-/* テキスト */
 .text-block p {
   text-align: center;
   max-width: 700px;
@@ -219,32 +203,26 @@ body {
 }
 
 .highlight {
-  background: rgba(204, 201, 201, 0.25); /* 半透明グレー */
+  background: rgba(204, 201, 201, 0.25); 
   padding: 20px 25px;
   border-radius: 8px;
 
-  /* 少しだけ小さく見せる */
   transform: scale(0.96);
 
-  /* 中央寄せ＋幅制限 */
   max-width: 90%;
   margin: 40px auto;
 
-  /* ほんのり浮かせる */
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
 
-  /* ガラスっぽくするなら */
   backdrop-filter: blur(4px);
 }
 
-/* フェード */
 .fade {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeUp 1.2s forwards;
 }
 
-/* 順番表示 */
 .fade:nth-of-type(1) { animation-delay: 0.5s; }
 .fade:nth-of-type(2) { animation-delay: 2s; }
 .fade:nth-of-type(3) { animation-delay: 4s; }
@@ -257,7 +235,6 @@ body {
   }
 }
 
-/* 強調 */
 .danger {
   color: #ffffff;
   letter-spacing: 2px;
@@ -265,7 +242,6 @@ body {
   animation: softFlash 4s ease-in-out infinite;
 }
 
-/* 最後の一文ちょい演出 */
 .last {
   margin-top: 40px;
   letter-spacing: 3px;
@@ -278,7 +254,7 @@ body {
   margin-top: 80px;
 
   font-size: 20px;
-  letter-spacing: 6px; /* ←これが重要 */
+  letter-spacing: 6px; 
 
   opacity: 0;
   animation: cinematicFade 2.5s forwards;
@@ -288,7 +264,6 @@ body {
   text-shadow: 0 0 12px rgba(255,255,255,0.2);
 }
 
-/* ゆっくり出てくる */
 @keyframes cinematicFade {
   0% {
     opacity: 0;
@@ -302,7 +277,6 @@ body {
   }
 }
 
-/* 横スクロール */
 .gallery {
   display: flex;
   gap: 60px;
@@ -314,7 +288,6 @@ body {
   scroll-snap-type: none; 
 }
 
-/* スクロールバー消す（任意） */
 .gallery::-webkit-scrollbar {
   display: none;
 }
@@ -328,7 +301,6 @@ body {
   scroll-snap-align: center;
 }
 
-/* 縦長画像 */
 .card img {
   width: 100%;
   height: 380px;
@@ -337,7 +309,6 @@ body {
   transition: 0.4s;
 }
 
-/* タイトル */
 .card p {
   margin-top: 15px;
   font-size: 14px;
@@ -351,7 +322,6 @@ body {
   justify-content: center;
 }
 
-/* ホバー演出（不思議感） */
 .card:hover img {
   transform: scale(1.08);
   filter: brightness(1) blur(0);
@@ -362,7 +332,6 @@ body {
   letter-spacing: 4px;
 }
 
-/* スマホ対応 */
 @media (max-width: 768px) {
   .gallery {
     display: flex;
@@ -450,7 +419,6 @@ body.page11 {
   letter-spacing: 0.08em;
 }
 
-/* 三本線ボタン */
 .menu-btn {
   position: fixed;
   top: 20px;
@@ -470,7 +438,6 @@ body.page11 {
   transition: 0.3s;
 }
 
-/* 開いたときバツになる */
 .menu-btn.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -483,7 +450,6 @@ body.page11 {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* メニュー本体 */
 .menu {
   position: fixed;
   top: 0;
@@ -499,12 +465,10 @@ body.page11 {
   justify-content: center;
 }
 
-/* 開いた状態 */
 .menu.active {
   right: 0;
 }
 
-/* メニューリスト */
 .menu ul {
   list-style: none;
   text-align: center;
@@ -523,13 +487,11 @@ body.page11 {
   transition: 0.3s;
 }
 
-/* ホバーで不気味に */
 .menu a:hover {
   color: #ffdb3b;
   text-shadow: 0 0 8px rgb(255, 247, 0);
 }
 
-/* サブメニュー */
 .sub-menu {
   list-style: none;
   padding: 0;
@@ -540,7 +502,6 @@ body.page11 {
   margin: 8px 0;
 }
 
-/* 小リンク */
 .sub-menu a {
   font-size: 14px;
   color: #aaa;
@@ -548,8 +509,152 @@ body.page11 {
   transition: 0.3s;
 }
 
-/* ホバーでじわっと */
 .sub-menu a:hover {
   color: #ffdb3b;
   text-shadow: 0 0 6px rgb;
+}
+
+.memory-zone{
+    width:100%;
+    padding:120px 5%;
+    background:rgb(100, 98, 98);
+    color:white;
+    box-sizing:border-box;
+}
+
+.memory-title{
+    text-align:center;
+    font-size:60px;
+    margin-bottom:50px;
+    font-family:'Orbitron', sans-serif;
+}
+
+.memory-main{
+    position:relative;
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+}
+
+#memory-image{
+    width:100%;
+    height:650px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    transition:0.5s;
+
+    filter:brightness(0.85);
+}
+
+.memory-info{
+    position:absolute;
+
+    bottom:30px;
+    left:30px;
+
+    background:rgba(169, 165, 47, 0.45);
+
+    padding:20px;
+
+    border-radius:10px;
+
+    backdrop-filter:blur(5px);
+
+    max-width:500px;
+}
+
+#memory-name{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+#memory-text{
+    color:#d0d0d0;
+    line-height:1.8;
+}
+
+/* グリッド */
+.memory-grid{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4, 1fr);
+
+    gap:20px;
+
+    max-width:1100px;
+
+    margin-inline:auto;
+}
+
+.memory-thumb{
+
+    width:100%;
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+    opacity:0.5;
+
+    transition:0.3s;
+
+    border:2px solid transparent;
+
+    border-radius:6px;
+}
+
+.memory-thumb:hover{
+
+    opacity:1;
+
+    transform:scale(1.03);
+}
+
+.memory-thumb.active{
+
+    opacity:1;
+
+    border-color:white;
+}
+
+/* スマホ対応 */
+@media (max-width:768px){
+
+    .memory-title{
+        font-size:40px;
+    }
+
+    #memory-image{
+        height:300px;
+    }
+
+    .memory-info{
+
+        position:relative;
+
+        left:0;
+        bottom:0;
+
+        margin-top:15px;
+
+        max-width:100%;
+    }
+
+    .memory-grid{
+
+        grid-template-columns:
+        repeat(2, 1fr);
+    }
+
+    #memory-name{
+        font-size:24px;
+    }
 }

@@ -10,15 +10,15 @@
      <link rel="stylesheet" href="style.css">
  </head>
 
- <body>
+  <body>
 
-  <div class="menu-btn" id="menu-btn">
+   <div class="menu-btn" id="menu-btn">
+   <span></span>
   <span></span>
   <span></span>
-  <span></span>
-</div>
+ </div>
 
-<nav class="menu" id="menu">
+ <nav class="menu" id="menu">
   <ul>
     <li><a href="#level2">Liminal Space</a></li>
     <li><a href="#level3">The Backrooms</a></li>
@@ -37,16 +37,16 @@
       <li><a href="page11.html">The Field of Wheat</a></li>
     </ul>
   </ul>
-</nav>
-<script>
-const btn = document.getElementById("menu-btn");
-const menu = document.getElementById("menu");
+ </nav>
+  <script>
+ const btn = document.getElementById("menu-btn");
+ const menu = document.getElementById("menu");
 
-btn.addEventListener("click", () => {
+ btn.addEventListener("click", () => {
   btn.classList.toggle("active");
   menu.classList.toggle("active");
-});
-</script>
+ });
+ </script>
 
        <div id="loading">
          <div id="noise"></div>
@@ -143,8 +143,8 @@ btn.addEventListener("click", () => {
 
     </div>
   </div>
-</section>
-<h2 id="about"></h2>
+ </section>
+ <h2 id="about"></h2>
 
        <section>
         <div class="gallery">
@@ -206,12 +206,149 @@ btn.addEventListener("click", () => {
 
         </div>
        </section>
-      
+ <section class="memory-zone">
 
-    
+  <h1 class="memory-title glitch"
+  data-text="Liminal space in school">
+    Liminal space in school
+  </h1>
 
-        <script src="script.js"></script>
+  <div class="memory-main">
+
+    <img id="memory-image"
+    src="room1.jpg">
+
+    <div class="memory-info">
+
+      <h2 id="memory-name">
+        Echoes Between Floors
+      </h2>
+
+      <p id="memory-text">
+        そこには誰かの気配だけが残っている。
+      </p>
+
+    </div>
+  </div>
+
+  <!-- 4×3 グリッド -->
+  <div class="memory-grid">
+
+    <!-- 1 -->
+    <img
+    class="memory-thumb active"
+    src="room1.jpg"
+
+    data-title="Echoes Between Floors"
+
+    data-text="そこには誰かの気配だけが残っている。足音が聞こえてきたら何かがここを彷徨っている証拠だ。">
+
+    <!-- 2 -->
+    <img
+    class="memory-thumb"
+    src="room2.jpg"
+
+    data-title="Caged Geometry"
+
+    data-text="夢の中で増殖するように、構造だけが繰り返される。">
+
+    <!-- 3 -->
+    <img
+    class="memory-thumb"
+    src="room3.jpg"
+
+    data-title="The Waiting Hall Never Sleeps"
+
+    data-text="最後の人が消えた後も、灯りだけが残り続けていた。">
+
+    <!-- 4 -->
+    <img
+    class="memory-thumb"
+    src="room4.jpg"
+
+    data-title="Statues Watching in Silence"
+
+    data-text="「彼ら」は動かない。無機質な視線がこちらを見ている。いつから視線が向いていたのか知る術はない。">
+
+    <!-- 5 -->
+    <img
+    class="memory-thumb"
+    src="room5.jpg"
+
+    data-title="Concrete Memory"
+
+    data-text="忘れ去られた建物の中、この空間だけがもう存在しない声を覚えている。">
+
+    <!-- 6 -->
+    <img
+    class="memory-thumb"
+    src="room6.jpg"
+
+    data-title="Endless Fluorescent Night"
+
+    data-text="永遠に続く朝の来ない廊下。蛍光灯だけが奇妙な音を立てる。">
+
+    <!-- 7 -->
+    <img
+    class="memory-thumb"
+    src="room7.jpg"
+
+    data-title="Halfway to Somewhere"
+
+    data-text="どこでもない場所へ続く終わりのない階層。">
+
+    <!-- 8 -->
+    <img
+    class="memory-thumb"
+    src="room8.jpg"
+
+    data-title="After Everyone Left"
+
+    data-text="この部屋は戻らない誰かを待ち続けている。">
+
+    <!-- 9 -->
+    <img
+    class="memory-thumb"
+    src="room9.jpg"
+
+    data-title="The Corridor That Forgets Time"
+
+    data-text="白い灯りを目指して進んでも無駄である。空間が異様に引き伸ばされているから。">
+
+    <!-- 10 -->
+    <img
+    class="memory-thumb"
+    src="room10.jpg"
+
+    data-title="Stairway Without Arrival"
+
+    data-text="ここへ来た記憶はないのに何故か見覚えがある。">
+
+    <!-- 11 -->
+    <img
+    class="memory-thumb"
+    src="room11.jpg"
+
+    data-title="Midnight Reflection"
+
+    data-text="床は本来映るはずのないものまで反射させる。">
+
+    <!-- 12 -->
+    <img
+    class="memory-thumb"
+    src="room12.jpg"
+
+    data-title="Blue Hour Passage"
+
+    data-text="昼と夜の境界。世界は止まったように見える。">
+
+   </div>
+
+    <script src="script.js"></script>
 
     </body>
+
+
+</section>
 
 </html>
