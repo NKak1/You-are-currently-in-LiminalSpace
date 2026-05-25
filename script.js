@@ -133,6 +133,12 @@ thumbs.forEach(thumb => {
 
     thumb.addEventListener("click", () => {
 
+      document.querySelector(".memory-main")
+.scrollIntoView({
+    behavior:"smooth"
+});
+
+
         mainImage.style.opacity = 0;
 
         setTimeout(() => {
