@@ -658,3 +658,11 @@ body.page11 {
         font-size:24px;
     }
 }
+
+html{
+    scroll-behavior:smooth;
+}
+
+.memory-main{
+    scroll-margin-top:100px;
+}
