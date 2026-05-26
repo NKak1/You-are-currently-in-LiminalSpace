@@ -576,7 +576,6 @@ body.page11 {
     line-height:1.8;
 }
 
-/* グリッド */
 .memory-grid{
 
     margin-top:40px;
@@ -625,7 +624,6 @@ body.page11 {
     border-color:white;
 }
 
-/* スマホ対応 */
 @media (max-width:768px){
 
     .memory-title{
